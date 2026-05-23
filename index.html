@@ -225,6 +225,138 @@
     </div>
 </section>
 
+
+<section class="section" style="padding: 2rem 0; background-color: #F8F6FC;">
+  <div class="container is-max-desktop">
+
+    <div class="has-text-centered mb-5">
+      <div class="buttons is-centered" style="background: rgba(235, 230, 243, 0.5); padding: 6px; border-radius: 40px; display: inline-flex; width: auto; border: 1px solid #EBE6F3;">
+        <button id="btn-openref-acc" class="button is-rounded px-5 is-link" style="font-weight: 600; background: #4A375E; color: #ffffff; transition: all 0.3s;" onclick="toggleOpenRefTable('accuracy')">
+          Grounding Accuracy Leaderboard
+        </button>
+        <button id="btn-openref-rej" class="button is-rounded px-5 is-light" style="font-weight: 600; color: #4A375E; background: transparent; border: none; transition: all 0.3s;" onclick="toggleOpenRefTable('rejection')">
+          Rejection Reliability Leaderboard
+        </button>
+      </div>
+    </div>
+
+    <div class="card" style="border-radius: 16px; box-shadow: 0 10px 35px rgba(74, 55, 94, 0.06); border: 1px solid rgba(235, 230, 243, 0.7); overflow: hidden; background: #ffffff;">
+      <div class="card-content p-5">
+
+        <div id="openref-acc-panel" class="openref-table-box">
+          <div class="table-container" style="border-radius: 8px; border: 1px solid #EBE6F3;">
+            <table class="table is-fullwidth is-hoverable has-text-centered mb-0" style="font-size: 0.9rem; vertical-align: middle;">
+              <thead>
+                <tr style="background: linear-gradient(90deg, #4A375E 0%, #6C528B 100%);">
+                  <th class="has-text-white" style="text-align: center; width: 70px;">Rank</th>
+                  <th class="has-text-white" style="text-align: left; padding-left: 20px;">Model</th>
+                  <th class="has-text-white" style="text-align: center; width: 70px;">Size</th>
+                  <th class="has-text-white" style="text-align: center;">Land.</th>
+                  <th class="has-text-white" style="text-align: center;">Celeb.</th>
+                  <th class="has-text-white" style="text-align: center;">Logo</th>
+                  <th class="has-text-white" style="text-align: center;">Poly.</th>
+                  <th class="has-text-white" style="text-align: center;">Ord.</th>
+                  <th class="has-text-white" style="text-align: center;">Sing.</th>
+                  <th class="has-text-white" style="text-align: center;">Multi</th>
+                  <th class="has-text-white" style="text-align: center; background-color: #3b2c4c; width: 100px;">Avg.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: #FFFDF4;"><td>🥇 1</td><td style="text-align: left; padding-left: 20px;"><strong>Qwen3-VL</strong></td><td>8B</td><td class="has-text-weight-bold">88.6</td><td>90.8</td><td class="has-text-weight-bold">57.0</td><td class="has-text-weight-bold">71.4</td><td>27.7</td><td class="has-text-weight-bold">74.7</td><td>35.5</td><td class="has-text-weight-bold" style="color: #1C4E80; font-size: 1.05rem;">63.7</td></tr>
+                <tr style="background-color: #FAFAFD;"><td>🥈 2</td><td style="text-align: left; padding-left: 20px;"><strong>Qwen3-VL</strong></td><td>4B</td><td>87.1</td><td>89.0</td><td>56.8</td><td>68.6</td><td>15.9</td><td>75.2</td><td>33.7</td><td class="has-text-weight-bold" style="color: #1C4E80; font-size: 1.05rem;">60.9</td></tr>
+                <tr style="background-color: #FFF9F6;"><td>🥉 3</td><td style="text-align: left; padding-left: 20px;"><strong>Qwen3-VL</strong></td><td>2B</td><td>83.1</td><td>89.1</td><td>34.9</td><td>63.5</td><td>12.3</td><td>66.6</td><td>29.6</td><td class="has-text-weight-bold" style="color: #1C4E80; font-size: 1.05rem;">54.2</td></tr>
+                <tr><td>4</td><td style="text-align: left; padding-left: 20px;">GLM-4.6V</td><td>9B</td><td>86.5</td><td>83.5</td><td>55.9</td><td>68.2</td><td>24.1</td><td>72.9</td><td>21.1</td><td class="has-text-weight-bold" style="color: #666;">51.2</td></tr>
+                <tr><td>5</td><td style="text-align: left; padding-left: 20px;">Qwen2.5-VL</td><td>32B</td><td>85.5</td><td>91.4</td><td>31.5</td><td>61.4</td><td class="has-text-weight-bold">46.7</td><td>61.8</td><td>37.4</td><td class="has-text-weight-bold" style="color: #666;">45.9</td></tr>
+                <tr><td>6</td><td style="text-align: left; padding-left: 20px;">Grounding-Dino</td><td>—</td><td>61.3</td><td>52.7</td><td>31.5</td><td>61.4</td><td>8.2</td><td>58.3</td><td>25.2</td><td class="has-text-weight-bold" style="color: #666;">42.7</td></tr>
+                <tr><td>7</td><td style="text-align: left; padding-left: 20px;">Qwen2.5-VL</td><td>7B</td><td>85.0</td><td>85.6</td><td>27.6</td><td>64.5</td><td>15.9</td><td>61.8</td><td>28.1</td><td class="has-text-weight-bold" style="color: #666;">39.7</td></tr>
+                <tr><td>8</td><td style="text-align: left; padding-left: 20px;">LLaVA-OV-1.5</td><td>8B</td><td>70.5</td><td>75.7</td><td>7.6</td><td>59.1</td><td>6.7</td><td>19.1</td><td>8.7</td><td class="has-text-weight-bold" style="color: #666;">35.3</td></tr>
+                <tr><td>9</td><td style="text-align: left; padding-left: 20px;">Qwen2-VL</td><td>7B</td><td>68.4</td><td>59.3</td><td>21.7</td><td>46.8</td><td>9.2</td><td>16.7</td><td>16.8</td><td class="has-text-weight-bold" style="color: #666;">34.9</td></tr>
+                <tr><td>10</td><td style="text-align: left; padding-left: 20px;">Keye-VL-1.5</td><td>8B</td><td>67.9</td><td>77.0</td><td>12.4</td><td>64.4</td><td>23.6</td><td>26.4</td><td>13.3</td><td class="has-text-weight-bold" style="color: #666;">31.3</td></tr>
+                <tr><td>11</td><td style="text-align: left; padding-left: 20px;">MiniCPM-V</td><td>8B</td><td>78.8</td><td>84.5</td><td>33.5</td><td>54.9</td><td>24.6</td><td>53.5</td><td>11.8</td><td class="has-text-weight-bold" style="color: #666;">29.5</td></tr>
+                <tr><td>12</td><td style="text-align: left; padding-left: 20px;">MiMo-VL-RL</td><td>7B</td><td>60.7</td><td>70.5</td><td>8.9</td><td>65.5</td><td>15.1</td><td>27.7</td><td>15.0</td><td class="has-text-weight-bold" style="color: #666;">26.2</td></tr>
+                <tr><td>13</td><td style="text-align: left; padding-left: 20px;">InternVL3.5</td><td>8B</td><td>72.5</td><td>77.0</td><td>2.9</td><td>52.11</td><td>35.4</td><td>36.0</td><td>9.4</td><td class="has-text-weight-bold" style="color: #666;">22.6</td></tr>
+                <tr><td>14</td><td style="text-align: left; padding-left: 20px;">Mistral-3</td><td>8B</td><td>8.2</td><td>24.8</td><td>0.7</td><td>4.6</td><td>2.3</td><td>0.7</td><td>0.2</td><td class="has-text-weight-bold" style="color: #666;">2.3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="openref-rej-panel" class="openref-table-box" style="display: none;">
+          <div class="table-container" style="border-radius: 8px; border: 1px solid #EBE6F3;">
+            <table class="table is-fullwidth is-hoverable has-text-centered mb-0" style="font-size: 0.9rem; vertical-align: middle;">
+              <thead>
+                <tr style="background: linear-gradient(90deg, #4A375E 0%, #6C528B 100%);">
+                  <th class="has-text-white" style="text-align: center; width: 70px;">Rank</th>
+                  <th class="has-text-white" style="text-align: left; padding-left: 20px;">Model</th>
+                  <th class="has-text-white" style="text-align: center; width: 70px;">Size</th>
+                  <th class="has-text-white" style="text-align: center;">Land.</th>
+                  <th class="has-text-white" style="text-align: center;">Celeb.</th>
+                  <th class="has-text-white" style="text-align: center;">Logo</th>
+                  <th class="has-text-white" style="text-align: center;">Ord.</th>
+                  <th class="has-text-white" style="text-align: center;">Complex Scen.</th>
+                  <th class="has-text-white" style="text-align: center; background-color: #3b2c4c; width: 100px;">Avg.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background-color: #FFFDF4;"><td>🥇 1</td><td style="text-align: left; padding-left: 20px;"><strong>Qwen2-VL</strong></td><td>7B</td><td>96.4</td><td class="has-text-weight-bold">100</td><td>87.7</td><td class="has-text-weight-bold">84.6</td><td class="has-text-weight-bold">85.6</td><td class="has-text-weight-bold" style="color: #1C4E80; font-size: 1.05rem;">90.9</td></tr>
+                <tr style="background-color: #FAFAFD;"><td>🥈 2</td><td style="text-align: left; padding-left: 20px;"><strong>Qwen3-VL</strong></td><td>8B</td><td class="has-text-weight-bold">100</td><td>92.1</td><td>90.1</td><td>58.0</td><td>82.6</td><td class="has-text-weight-bold" style="color: #1C4E80; font-size: 1.05rem;">84.5</td></tr>
+                <tr style="background-color: #FFF9F6;"><td>🥉 3</td><td style="text-align: left; padding-left: 20px;"><strong>GLM-4.6V</strong></td><td>9B</td><td class="has-text-weight-bold">100</td><td>90.3</td><td class="has-text-weight-bold">94.0</td><td>41.4</td><td>67.8</td><td class="has-text-weight-bold" style="color: #1C4E80; font-size: 1.05rem;">78.7</td></tr>
+                <tr><td>4</td><td style="text-align: left; padding-left: 20px;">LLaVA-OV-1.5</td><td>8B</td><td class="has-text-weight-bold">100</td><td>94.5</td><td>74.7</td><td>27.8</td><td>78.6</td><td class="has-text-weight-bold" style="color: #666;">75.1</td></tr>
+                <tr><td>5</td><td style="text-align: left; padding-left: 20px;">MiniCPM-V-4.5</td><td>8B</td><td>98.5</td><td>94.0</td><td>83.8</td><td>22.8</td><td>68.8</td><td class="has-text-weight-bold" style="color: #666;">73.6</td></tr>
+                <tr><td>6</td><td style="text-align: left; padding-left: 20px;">Mistral-3</td><td>8B</td><td>98.5</td><td>82.3</td><td>87.3</td><td>7.5</td><td>79.0</td><td class="has-text-weight-bold" style="color: #666;">70.9</td></tr>
+                <tr><td>7</td><td style="text-align: left; padding-left: 20px;">Keye-VL-1.5</td><td>8B</td><td>96.4</td><td>74.0</td><td>83.6</td><td>28.3</td><td>69.3</td><td class="has-text-weight-bold" style="color: #666;">70.3</td></tr>
+                <tr><td>8</td><td style="text-align: left; padding-left: 20px;">Qwen3-VL</td><td>2B</td><td>92.7</td><td>60.9</td><td>23.1</td><td>4.5</td><td>9.2</td><td class="has-text-weight-bold" style="color: #666;">38.1</td></tr>
+                <tr><td>9</td><td style="text-align: left; padding-left: 20px;">Qwen3-VL</td><td>4B</td><td>92.2</td><td>60.8</td><td>23.4</td><td>4.3</td><td>8.6</td><td class="has-text-weight-bold" style="color: #666;">37.9</td></tr>
+                <tr><td>10</td><td style="text-align: left; padding-left: 20px;">Qwen2.5-VL</td><td>32B</td><td>79.8</td><td>45.7</td><td>44.8</td><td>6.9</td><td>12.5</td><td class="has-text-weight-bold" style="color: #666;">37.9</td></tr>
+                <tr><td>11</td><td style="text-align: left; padding-left: 20px;">InternVL3.5</td><td>8B</td><td>68.9</td><td>52.3</td><td>42.8</td><td>56.6</td><td>34.6</td><td class="has-text-weight-bold" style="color: #666;">51.0</td></tr>
+                <tr><td>12</td><td style="text-align: left; padding-left: 20px;">Grounding-Dino</td><td>—</td><td>40.0</td><td>36.8</td><td>38.3</td><td>70.6</td><td>50.0</td><td class="has-text-weight-bold" style="color: #666;">47.2</td></tr>
+                <tr><td>13</td><td style="text-align: left; padding-left: 20px;">Qwen2.5-VL</td><td>7B</td><td>29.0</td><td>13.8</td><td>4.4</td><td>4.2</td><td>19.0</td><td class="has-text-weight-bold" style="color: #666;">14.1</td></tr>
+                <tr><td>14</td><td style="text-align: left; padding-left: 20px;">MiMo-VL-RL</td><td>7B</td><td>22.1</td><td>20.5</td><td>15.6</td><td>27.7</td><td>17.8</td><td class="has-text-weight-bold" style="color: #666;">20.7</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleOpenRefTable(type) {
+  const btnAcc = document.getElementById('btn-openref-acc');
+  const btnRej = document.getElementById('btn-openref-rej');
+  const panelAcc = document.getElementById('openref-acc-panel');
+  const panelRej = document.getElementById('openref-rej-panel');
+
+  if (type === 'accuracy') {
+    btnAcc.style.background = "#4A375E";
+    btnAcc.style.color = "#ffffff";
+    btnAcc.className = "button is-rounded px-5 is-link";
+
+    btnRej.style.background = "transparent";
+    btnRej.style.color = "#4A375E";
+    btnRej.className = "button is-rounded px-5 is-light";
+
+    panelAcc.style.display = "block";
+    panelRej.style.display = "none";
+  } else {
+    btnRej.style.background = "#4A375E";
+    btnRej.style.color = "#ffffff";
+    btnRej.className = "button is-rounded px-5 is-link";
+
+    btnAcc.style.background = "transparent";
+    btnAcc.style.color = "#4A375E";
+    btnAcc.className = "button is-rounded px-5 is-light";
+
+    panelAcc.style.display = "none";
+    panelRej.style.display = "block";
+  }
+}
+</script>
+
+
+  
 <hr class="my-6" style="background-color: #EBE6F3; height: 1px;">
 
 <section class="section" style="padding-top: 0;">
