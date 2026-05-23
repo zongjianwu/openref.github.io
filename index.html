@@ -143,18 +143,18 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Dataset Visualization</h2>
+        <h2 class="title is-3">Benchmark Design</h2>
         <div class="content has-text-justified">
           <p>
-            An overview and qualitative examples of <strong>OpenRef</strong> benchmark. 
+            An overview and qualitative examples of our <strong>OpenRef</strong> benchmark. 
             <em>(Click the image to view the full vector graphic in a new tab)</em>.
           </p>
         </div>
 
-        <div class="has-text-centered">
-          <a href="static/images/dataset_vis.svg" target="_blank" title="Click to open full high-resolution SVG in a new tab">
+        <div class="has-text-centered mb-6"> <a href="static/images/dataset_vis.svg" target="_blank" title="Click to open full high-resolution SVG in a new tab">
             <figure class="image" style="transition: transform 0.3s; cursor: zoom-in;">
               <img src="static/images/dataset_vis.svg" alt="OpenRef Dataset Visualization" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
             </figure>
@@ -163,11 +163,67 @@
             Figure 1: Comprehensive visualization of OpenRef Benchmark.
           </p>
         </div>
-        </div>
+      </div>
     </div>
-  </div>
-</section>
 
+    <hr class="my-6" style="background-color: #EBE6F3; height: 1px;"> <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Benchmark Statistics</h2>
+        
+        <div class="columns is-vcentered mt-4">
+          <div class="column is-6">
+            <div class="has-text-centered">
+              <img src="static/images/stats_vis.svg" alt="OpenRef Benchmark Statistics" style="width: 100%; height: auto; border-radius: 6px;">
+              <p class="subtitle is-6 mt-2 has-text-grey">
+                Figure 2: Statistical distribution of referring expressions and instances.
+              </p>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <div class="content has-text-justified">
+              <p>
+                <strong>OpenRef</strong> establishes a large-scale, robust evaluation environment tailored for open-world Referring Expression Comprehension. The detailed statistical composition is summarized below:
+              </p>
+              
+              <div class="columns is-mobile is-multiline text-center">
+                <div class="column is-6 mb-2">
+                  <div style="background: #F8F6FC; padding: 10px; border-radius: 8px; border-left: 4px solid #8A70A4;">
+                    <span class="title is-4 has-text-weight-bold" style="color: #4A375E;">32,735</span><br>
+                    <span class="is-size-7 has-text-grey">Total Expressions</span>
+                  </div>
+                </div>
+                <div class="column is-6 mb-2">
+                  <div style="background: #F8F6FC; padding: 10px; border-radius: 8px; border-left: 4px solid #8A70A4;">
+                    <span class="title is-4 has-text-weight-bold" style="color: #4A375E;">17,586</span><br>
+                    <span class="is-size-7 has-text-grey">Total Images</span>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div style="background: #EAF7ED; padding: 10px; border-radius: 8px; border-left: 4px solid #48A75B;">
+                    <span class="title is-4 has-text-weight-bold" style="color: #2E6B3B;">15,149</span><br>
+                    <span class="is-size-7 has-text-grey">Positive Expr.</span>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div style="background: #FCECEE; padding: 10px; border-radius: 8px; border-left: 4px solid #D94B5C;">
+                    <span class="title is-4 has-text-weight-bold" style="color: #912D39;">17,586</span><br>
+                    <span class="is-size-7 has-text-grey">Negative Expr.</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="is-size-6 mt-3">
+                Across these samples, OpenRef comprises a total of <strong>37,698 object instances</strong>. Notably, each expression refers to an average of <strong>4.24 objects</strong>, presenting a significant challenge for precise localization and negative rejection.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+</section>
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
