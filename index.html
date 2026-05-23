@@ -231,6 +231,51 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
+        <h2 class="title is-3">Multi-task Consistency Checker (MCC)</h2>
+        
+        <div class="content has-text-justified mt-4">
+          <p>
+            To alleviate logical hallucinations in open-world visual grounding, we propose the <strong>Multi-task Consistency Checker (MCC)</strong>. 
+            It is a training-free framework designed to ensure strict logical agreement between referring counting and referring object detection during inference.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered mt-5">
+          
+          <div class="column is-6">
+            <div class="has-text-centered" style="border-right: 1px dashed #EBE6F3; padding-right: 15px;">
+              <a href="static/images/MCC_motivation.svg" target="_blank" title="Click to view full motivation">
+                <figure class="image">
+                  <img src="static/images/MCC_motivation.svg" alt="MCC Motivation" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                </figure>
+              </a>
+              <p class="subtitle is-7 mt-2 has-text-grey">
+                (a) Motivation of MCC
+              </p>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <div class="has-text-centered" style="padding-left: 15px;">
+              <a href="static/images/MCC.svg" target="_blank" title="Click to view full pipeline">
+                <figure class="image">
+                  <img src="static/images/MCC.svg" alt="MCC Method Pipeline" style="width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                </figure>
+              </a>
+              <p class="subtitle is-7 mt-2 has-text-grey">
+                (b) Overall Pipeline of MCC
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-6" style="background-color: #EBE6F3; height: 1px;">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
         <h2 class="title is-3">Experimental Results</h2>
         
         <div class="content has-text-justified mt-4">
@@ -243,39 +288,39 @@
           <ul>
             <li class="is-active" onclick="switchTab(event, 'tab-accuracy')">
               <a>
-                <span class="icon is-small"><i class="fas fa-bullseye" aria-hidden="true"></i></span>
-                <span>Grounding Accuracy (OpenRef)</span>
+                <span class="icon is-small" style="color: #4A375E;"><i class="fas fa-bullseye" aria-hidden="true"></i></span>
+                <span class="has-text-weight-semibold">Grounding Accuracy (OpenRef)</span>
               </a>
             </li>
             <li onclick="switchTab(event, 'tab-rejection')">
               <a>
-                <span class="icon is-small"><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
-                <span>Rejection Reliability (N3R)</span>
+                <span class="icon is-small" style="color: #4A375E;"><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
+                <span class="has-text-weight-semibold">Rejection Reliability (N3R)</span>
               </a>
             </li>
             <li onclick="switchTab(event, 'tab-grefcoco')">
               <a>
-                <span class="icon is-small"><i class="fas fa-expand-arrows-alt" aria-hidden="true"></i></span>
-                <span>Generalization (gRefCOCO)</span>
+                <span class="icon is-small" style="color: #4A375E;"><i class="fas fa-expand-arrows-alt" aria-hidden="true"></i></span>
+                <span class="has-text-weight-semibold">Generalization (gRefCOCO)</span>
               </a>
             </li>
           </ul>
         </div>
 
         <div id="tab-accuracy" class="tab-content-box">
-          <div class="table-container" style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px;">
-            <table class="table is-fullwidth is-striped is-hoverable has-text-centered">
+          <div class="table-container" style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
+            <table class="table is-fullwidth is-striped is-hoverable has-text-centered mb-0" style="font-size: 0.95rem;">
               <thead>
                 <tr style="background-color: #4A375E;">
-                  <th class="has-text-white">Model</th>
-                  <th class="has-text-white">Land.</th>
-                  <th class="has-text-white">Celeb.</th>
-                  <th class="has-text-white">Logo</th>
-                  <th class="has-text-white">Poly.</th>
-                  <th class="has-text-white">Ord.</th>
-                  <th class="has-text-white">Sing.</th>
-                  <th class="has-text-white">Multi</th>
-                  <th class="has-text-white" style="background-color: #3b2c4c;">Avg.</th>
+                  <th class="has-text-white" style="text-align: center;">Model</th>
+                  <th class="has-text-white" style="text-align: center;">Land.</th>
+                  <th class="has-text-white" style="text-align: center;">Celeb.</th>
+                  <th class="has-text-white" style="text-align: center;">Logo</th>
+                  <th class="has-text-white" style="text-align: center;">Poly.</th>
+                  <th class="has-text-white" style="text-align: center;">Ord.</th>
+                  <th class="has-text-white" style="text-align: center;">Sing.</th>
+                  <th class="has-text-white" style="text-align: center;">Multi</th>
+                  <th class="has-text-white" style="text-align: center; background-color: #3b2c4c;">Avg.</th>
                 </tr>
               </thead>
               <tbody>
@@ -295,26 +340,26 @@
         </div>
 
         <div id="tab-rejection" class="tab-content-box" style="display: none;">
-          <div class="table-container" style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px;">
-            <table class="table is-fullwidth is-striped is-hoverable has-text-centered">
+          <div class="table-container" style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
+            <table class="table is-fullwidth is-striped is-hoverable has-text-centered mb-0" style="font-size: 0.9rem;">
               <thead>
                 <tr style="background-color: #4A375E;">
-                  <th class="has-text-white" rowspan="2" style="vertical-align: middle;">Model</th>
-                  <th class="has-text-white" colspan="2">Land.</th>
-                  <th class="has-text-white" colspan="2">Celeb.</th>
-                  <th class="has-text-white" colspan="2">Logo</th>
-                  <th class="has-text-white" colspan="2">Ord.</th>
-                  <th class="has-text-white" colspan="2">Comp. scen.</th>
-                  <th class="has-text-white" colspan="2" style="background-color: #3b2c4c;">Avg.</th>
+                  <th class="has-text-white" rowspan="2" style="vertical-align: middle; text-align: center;">Model</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">Land.</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">Celeb.</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">Logo</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">Ord.</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">Comp. scen.</th>
+                  <th class="has-text-white" colspan="2" style="background-color: #3b2c4c; text-align: center;">Avg.</th>
                 </tr>
                 <tr style="background-color: #5c4575;">
-                  <th class="has-text-white">N_abs</th><th class="has-text-white">N3R</th>
-                  <th class="has-text-white">N_abs</th><th class="has-text-white">N3R</th>
-                  <th class="has-text-white">N_abs</th><th class="has-text-white">N3R</th>
-                  <th class="has-text-white">N_abs</th><th class="has-text-white">N3R</th>
-                  <th class="has-text-white">N_abs</th><th class="has-text-white">N3R</th>
-                  <th class="has-text-white" style="background-color: #443357;">N_abs</th>
-                  <th class="has-text-white" style="background-color: #443357;">N3R</th>
+                  <th class="has-text-white" style="text-align: center;">N<sub>abs</sub></th><th class="has-text-white" style="text-align: center;">N3R</th>
+                  <th class="has-text-white" style="text-align: center;">N<sub>abs</sub></th><th class="has-text-white" style="text-align: center;">N3R</th>
+                  <th class="has-text-white" style="text-align: center;">N<sub>abs</sub></th><th class="has-text-white" style="text-align: center;">N3R</th>
+                  <th class="has-text-white" style="text-align: center;">N<sub>abs</sub></th><th class="has-text-white" style="text-align: center;">N3R</th>
+                  <th class="has-text-white" style="text-align: center;">N<sub>abs</sub></th><th class="has-text-white" style="text-align: center;">N3R</th>
+                  <th class="has-text-white" style="background-color: #443357; text-align: center;">N<sub>abs</sub></th>
+                  <th class="has-text-white" style="background-color: #443357; text-align: center;">N3R</th>
                 </tr>
               </thead>
               <tbody>
@@ -334,20 +379,20 @@
         </div>
 
         <div id="tab-grefcoco" class="tab-content-box" style="display: none;">
-          <div class="table-container" style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px;">
-            <table class="table is-fullwidth is-striped is-hoverable has-text-centered">
+          <div class="table-container" style="box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden;">
+            <table class="table is-fullwidth is-striped is-hoverable has-text-centered mb-0" style="font-size: 0.95rem;">
               <thead>
                 <tr style="background-color: #4A375E;">
-                  <th class="has-text-white" rowspan="2" style="vertical-align: middle;">Model</th>
-                  <th class="has-text-white" colspan="2">val</th>
-                  <th class="has-text-white" colspan="2">testA</th>
-                  <th class="has-text-white" colspan="2">testB</th>
-                  <th class="has-text-white" rowspan="2" style="vertical-align: middle; background-color: #3b2c4c;">Avg.</th>
+                  <th class="has-text-white" rowspan="2" style="vertical-align: middle; text-align: center;">Model</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">val</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">testA</th>
+                  <th class="has-text-white" colspan="2" style="text-align: center;">testB</th>
+                  <th class="has-text-white" rowspan="2" style="vertical-align: middle; background-color: #3b2c4c; text-align: center;">Avg.</th>
                 </tr>
                 <tr style="background-color: #5c4575;">
-                  <th class="has-text-white">single</th><th class="has-text-white">multi</th>
-                  <th class="has-text-white">single</th><th class="has-text-white">multi</th>
-                  <th class="has-text-white">single</th><th class="has-text-white">multi</th>
+                  <th class="has-text-white" style="text-align: center;">single</th><th class="has-text-white" style="text-align: center;">multi</th>
+                  <th class="has-text-white" style="text-align: center;">single</th><th class="has-text-white" style="text-align: center;">multi</th>
+                  <th class="has-text-white" style="text-align: center;">single</th><th class="has-text-white" style="text-align: center;">multi</th>
                 </tr>
               </thead>
               <tbody>
@@ -373,20 +418,19 @@
 
 <script>
 function switchTab(event, tabId) {
-  // 1. 隐藏所有 Tab 的内容
+  // 1. 隐藏当前区域下所有的 Tab 内容盒子
   const contents = document.querySelectorAll('.tab-content-box');
   contents.forEach(content => content.style.display = 'none');
   
-  // 2. 移除所有 Tab 按钮的激活状态
+  // 2. 取消所有 Tab 菜单按钮的激活状态
   const tabs = document.querySelectorAll('.tabs ul li');
   tabs.forEach(tab => tab.classList.remove('is-active'));
   
-  // 3. 显示当前点击的 Tab 内容并点亮按钮
+  // 3. 展开当前选中的表格并点亮当前 Tab 按钮
   document.getElementById(tabId).style.display = 'block';
   event.currentTarget.classList.add('is-active');
 }
 </script>
-
   
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
