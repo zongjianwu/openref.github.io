@@ -1,6 +1,6 @@
 # Nerfies
 
-This is the repository that contains source code for the [OpenRef website](https://nerfies.github.io).
+This is the repository that contains source code for the [OpenRef website](https://zongjianwu.github.io/openref/).
 
 If you find OpenRef useful for your work please cite:
 ```
