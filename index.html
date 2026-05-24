@@ -241,7 +241,7 @@
           Grounding Accuracy Leaderboard
         </button>
         <button id="btn-openref-rej" class="button is-rounded px-5 is-light" style="font-weight: 600; color: #4A375E; background: transparent; border: none; transition: all 0.3s;" onclick="toggleOpenRefTable('rejection')">
-          Rejection Reliability Leaderboard
+          Relative Rejection Reliability Leaderboard
         </button>
       </div>
     </div>
@@ -535,15 +535,19 @@ function toggleOpenRefTable(type) {
               </thead>
               <tbody>
                 <tr><td>Qwen3-VL</td><td>-</td><td>62.4</td><td>90.2</td><td>60.3</td><td>83.1</td><td>57.8</td><td class="has-text-weight-bold">70.8</td></tr>
-                <tr style="background-color: #FAF8FC;"><td>Qwen3-VL + <strong>MCC</strong></td><td>-</td><td>68.8</td><td>87.4</td><td>65.6</td><td>76.1</td><td>64.4</td><td class="has-text-weight-bold has-text-danger">72.5</td></tr>
-                <tr><td>GLM-4.6V</td><td>-</td><td>18.9</td><td>88.2</td><td>14.2</td><td>84.0</td><td>12.0</td><td class="has-text-weight-bold">43.5</td></tr>
-                <tr style="background-color: #FAF8FC;"><td>GLM-4.6V + <strong>MCC</strong></td><td>-</td><td>73.7</td><td>86.6</td><td>77.9</td><td>82.7</td><td>72.5</td><td class="has-text-weight-bold has-text-danger">78.7</td></tr>
-                <tr><td>LLaVA-OV-1.5</td><td>-</td><td>27.7</td><td>63.1</td><td>21.5</td><td>48.6</td><td>17.9</td><td class="has-text-weight-bold">35.8</td></tr>
-                <tr style="background-color: #FAF8FC;"><td>LLaVA-OV-1.5 + <strong>MCC</strong></td><td>-</td><td>44.3</td><td>74.2</td><td>36.7</td><td>60.0</td><td>36.5</td><td class="has-text-weight-bold has-text-danger">50.3</td></tr>
-                <tr><td>InternVL-3.5</td><td>-</td><td>53.0</td><td>94.6</td><td>38.3</td><td>88.6</td><td>33.2</td><td class="has-text-weight-bold">61.5</td></tr>
-                <tr style="background-color: #FAF8FC;"><td>InternVL-3.5 + <strong>MCC</strong></td><td>-</td><td>54.8</td><td>93.8</td><td>52.2</td><td>87.5</td><td>50.4</td><td class="has-text-weight-bold has-text-danger">67.7</td></tr>
-                <tr><td>Keye-VL-1.5</td><td>-</td><td>54.6</td><td>76.8</td><td>48.3</td><td>71.5</td><td>44.4</td><td class="has-text-weight-bold">59.1</td></tr>
-                <tr style="background-color: #FAF8FC;"><td>Keye-VL-1.5 + <strong>MCC</strong></td><td>-</td><td>58.5</td><td>81.1</td><td>56.7</td><td>74.3</td><td>53.6</td><td class="has-text-weight-bold has-text-danger">64.8</td></tr>
+              <tr style="background-color: #FAF8FC;"><td>+ <strong>MCC</strong></td><td>-</td><td>68.8</td><td>87.4</td><td>65.6</td><td>76.1</td><td>64.4</td><td class="has-text-weight-bold has-text-danger">72.5 (↑1.7)</td></tr>
+              
+              <tr><td>GLM-4.6V</td><td>-</td><td>18.9</td><td>88.2</td><td>14.2</td><td>84.0</td><td>12.0</td><td class="has-text-weight-bold">43.5</td></tr>
+              <tr style="background-color: #FAF8FC;"><td>+ <strong>MCC</strong></td><td>-</td><td>73.7</td><td>86.6</td><td>77.9</td><td>82.7</td><td>72.5</td><td class="has-text-weight-bold has-text-danger">78.7 (↑35.2)</td></tr>
+              
+              <tr><td>LLaVA-OV-1.5</td><td>-</td><td>27.7</td><td>63.1</td><td>21.5</td><td>48.6</td><td>17.9</td><td class="has-text-weight-bold">35.8</td></tr>
+              <tr style="background-color: #FAF8FC;"><td>+ <strong>MCC</strong></td><td>-</td><td>44.3</td><td>74.2</td><td>36.7</td><td>60.0</td><td>36.5</td><td class="has-text-weight-bold has-text-danger">50.3 (↑14.5)</td></tr>
+              
+              <tr><td>InternVL-3.5</td><td>-</td><td>53.0</td><td>94.6</td><td>38.3</td><td>88.6</td><td>33.2</td><td class="has-text-weight-bold">61.5</td></tr>
+              <tr style="background-color: #FAF8FC;"><td>+ <strong>MCC</strong></td><td>-</td><td>54.8</td><td>93.8</td><td>52.2</td><td>87.5</td><td>50.4</td><td class="has-text-weight-bold has-text-danger">67.7 (↑6.2)</td></tr>
+              
+              <tr><td>Keye-VL-1.5</td><td>-</td><td>54.6</td><td>76.8</td><td>48.3</td><td>71.5</td><td>44.4</td><td class="has-text-weight-bold">59.1</td></tr>
+              <tr style="background-color: #FAF8FC;"><td>+ <strong>MCC</strong></td><td>-</td><td>58.5</td><td>81.1</td><td>56.7</td><td>74.3</td><td>53.6</td><td class="has-text-weight-bold has-text-danger">64.8 (↑5.7)</td></tr>
               </tbody>
             </table>
           </div>
@@ -570,7 +574,7 @@ function switchTab(event, tabId) {
 }
 </script>
   
-<section class="section" id="BibTeX" style="background-color: #E2E2D7FF; padding: 3rem 0; margin-top: 2rem;">
+<section class="section" id="BibTeX" style="background-color: #CBC5DAFF; padding: 3rem 0; margin-top: 2rem;">
   <div class="container is-max-desktop content">
     <h2 class="title has-text-white" style="font-weight: 700; margin-bottom: 1.5rem;">BibTeX</h2>
     
