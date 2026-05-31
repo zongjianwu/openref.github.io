@@ -1,14 +1,14 @@
-# Nerfies
+# OpenRef
 
 This is the repository that contains source code for the [OpenRef website](https://zongjianwu.github.io/openref/).
 
 If you find OpenRef useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{wu2026towards,
+  title={Towards Open-World Referring Expression Comprehension: A Benchmark with Training-free Multi-task Consistency Checker},
+  author={Wu, Zongjian and Zhang, Lei},
+  journal={arXiv preprint arXiv:2605.25706},
+  year={2026} 
 }
 ```
 
